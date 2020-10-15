@@ -9,12 +9,11 @@ str: .asciz "David"
 .globl _start
 _start:
 
+    # 1. strlen function
     lea str, %rdi
     call str_len
     mov %eax, %edi
-    mov $60, %eax
-    syscall
-
 
     
-
+    # exit
+    mov $SYS_EXIT, %eax; syscall
