@@ -8,8 +8,6 @@ int main(int argc, char *argv[]) {
     unsigned int len = my_strlen(str);
     printf("String: '%s'\nLength: %d\n", str, len);
 
-    return 0;
-
 }
 
 
