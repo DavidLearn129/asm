@@ -5,9 +5,10 @@ SYS_WRITE=1
 .endm
 
 .section .data
-str1: .asciz "David"
-str2: .asciz "Thomas\n"
-
+str1:       .asciz "David"
+str2:       .asciz "Thomas\n"
+str3:       .asciz "This\n is a string."
+cut_len:    .byte 5
 
 .section .text
 .globl _start
@@ -21,10 +22,10 @@ _start:
     # 2. strprint function
     lea str2, %rdi
     call strprint
-    mov %rax, %rdi
-    mov $SYS_EXIT, %eax
-    syscall
 
-    
-    # exit
-    # EXIT
+    # 3. strcut function
+    lea str3,       %rdi
+    movzbq cut_len, %rsi
+    call strcut
+
+    EXIT

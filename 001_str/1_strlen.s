@@ -10,19 +10,19 @@ strlen:
     # unsigned int len = 0;
     mov $0, %rax
 
-  whileLoopEnter:
+  whileLoopEnter_strlen:
 
     # pointer_to_str[len] != '\0
-    cmp $0, (%rdi, %rax)
-    jz whileLoopExit
+    cmpb $0, (%rdi, %rax)
+    jz whileLoopExit_strlen
 
     # len ++;
     inc %eax
 
     # (implied) jump back to top of loop
-    jmp whileLoopEnter
+    jmp whileLoopEnter_strlen
 
-  whileLoopExit:
+  whileLoopExit_strlen:
     
     # return len
     ret
