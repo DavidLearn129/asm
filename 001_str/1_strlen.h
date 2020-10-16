@@ -1,1 +1,1 @@
-unsigned int my_strlen(char* pointer_to_str);
+unsigned int strlength(char* pointer_to_str);

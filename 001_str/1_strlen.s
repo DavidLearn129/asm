@@ -1,4 +1,4 @@
-str_len:
+strlen:
     # INPUT:
     #   rdi   -- 'pointer_to_string'
     # OUTPUT:
